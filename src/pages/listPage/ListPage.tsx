@@ -8,6 +8,7 @@ const ListPage: FC = () => {
   const [users, setUsers] = useState<any[]>([]);
   const [filteredUsers, setFilteredUsers] = useState([users]);
   const [loading, setLoading] = useState(false);
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchField);
 
   let API = 'https://swapi.dev/api/people';
 
@@ -30,11 +31,23 @@ const ListPage: FC = () => {
   }, []);
 
   useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearchTerm(searchField);
+    }, 500);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchField]);
+
+  useEffect(() => {
     const newFilteredUsers = users.filter((user) => {
-      return user.name.toLocaleLowerCase().includes(searchField);
+      return user.name
+        .toLocaleLowerCase()
+        .includes(debouncedSearchTerm.toLowerCase());
     });
     setFilteredUsers(newFilteredUsers);
-  }, [users, searchField]);
+  }, [users, debouncedSearchTerm]);
 
   const onSearchChange = (event: any) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();

@@ -33,12 +33,11 @@ const DetailPage: FC = () => {
     try {
       const response = await fetch(`https://swapi.dev/api/people/${id}/`);
       const data = await response.json();
-      console.log(data);
+
       setUserDetail(data);
       await fetchAdditionalData(data);
       setLoading(false);
     } catch (error) {
-      console.error(error);
       setLoading(false);
     }
   };
