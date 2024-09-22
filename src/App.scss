@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  body {
+    h1 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 500;
+    }
+    h2 {
+      font-size: clamp(1.5rem, 2.5vw, 4rem);
+    }
+    h3 {
+      font-size: clamp(1.2rem, 1.8vw, 3rem);
+    }
+    p {
+      font-size: clamp(1.1rem, 1.2vw, 2rem);
+    }
+  }
+}
+
+.card-component {
+  margin: 2rem;
+}
+.card-list {
+  flex: 1;
+  flex-wrap: wrap;
+  margin: 3rem;
+  scrollbar-width: none;
+  overflow-y: auto;
+  width: 60%;
+  cursor: pointer;
+}
+.search-box {
+  margin-top: 2rem;
+}
+.listed-contents {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  color: #4b5563;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.search-box {
+  display: flex;
+  padding-right: 1rem;
+  padding-top: 0.2rem;
+  padding-left: 1.5rem;
+  border-radius: 1.5rem;
+  border: 2px solid #bfdbfe;
+  background-color: #ebf8ff;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 32rem;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  outline: none;
+  border: unset;
+}
+
+.detailCard {
+  margin: 4rem 15rem;
+}
