@@ -8,10 +8,10 @@ import HairIcon from '../../assets/hair-dye.png';
 import SkinColorIcon from '../../assets/colour.png';
 import MassIcon from '../../assets/bodyweight.png';
 
-const UserCard: FC<{
-  user: Record<string, any>;
-  showAction?: boolean;
-}> = ({ showAction, user }) => {
+const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
+  showAction,
+  user,
+}) => {
   const { name, height, gender, mass, eye_color, hair_color, skin_color, url } =
     user;
   const navigate = useNavigate();

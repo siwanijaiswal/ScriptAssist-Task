@@ -79,3 +79,26 @@ input {
   margin-left: 1rem;
   flex-grow: 2.5;
 }
+.mantine-16gafg2 {
+  background-color: #fff !important;
+  border: 0.0625rem solid #ced4da !important;
+  border-radius: 0.5rem !important;
+}
+.mantine-9kralg {
+  color: #212529 !important;
+}
+
+.logout-button {
+  width: 10%;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background */
+  border: 2px solid #0056b3; /* Darker blue border */
+  border-radius: 5px; /* Slightly rounded corners */
+  color: white; /* White text color */
+  cursor: pointer; /* Pointer cursor on hover */ /* Center the text */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.logout-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

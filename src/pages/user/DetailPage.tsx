@@ -17,7 +17,6 @@ const DetailPage: FC = () => {
     try {
       const response = await getPeople(id);
       setUserDetail(response.data);
-      console.log(userDetail);
     } finally {
       setLoading(false);
     }
@@ -44,7 +43,6 @@ const DetailPage: FC = () => {
         <Button
           color="blue"
           style={{
-            // flexGrow: 1,
             width: '180px',
             marginTop: '3rem',
             marginLeft: '1rem',

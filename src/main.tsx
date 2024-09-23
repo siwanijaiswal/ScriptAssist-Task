@@ -6,6 +6,7 @@ import App from './App';
 import Landing from './pages/home/Home';
 import ListPage from './pages/user/ListPage';
 import DetailPage from './pages/user/DetailPage';
+import ProtectedRoute from './routes/ProtectedRoutes';
 
 export const routes = [
   {
@@ -18,11 +19,19 @@ export const routes = [
       },
       {
         path: '/users',
-        element: <ListPage />,
+        element: (
+          <ProtectedRoute>
+            <ListPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/user/:id',
-        element: <DetailPage />,
+        element: (
+          <ProtectedRoute>
+            <DetailPage />
+          </ProtectedRoute>
+        ),
       },
     ],
   },
