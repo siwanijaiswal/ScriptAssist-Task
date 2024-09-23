@@ -8,7 +8,10 @@ import HairIcon from '../../assets/hair-dye.png';
 import SkinColorIcon from '../../assets/colour.png';
 import MassIcon from '../../assets/bodyweight.png';
 
-const CardComponent: FC<{ user: Record<string, any> }> = ({ user }) => {
+const UserCard: FC<{
+  user: Record<string, any>;
+  showAction?: boolean;
+}> = ({ showAction, user }) => {
   const { name, height, gender, mass, eye_color, hair_color, skin_color, url } =
     user;
   const navigate = useNavigate();
@@ -179,23 +182,25 @@ const CardComponent: FC<{ user: Record<string, any> }> = ({ user }) => {
           </Text>
         </div>
       </Center>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          marginTop: '1rem',
-        }}
-      >
-        <Button
-          color="blue"
-          style={{ width: '20%' }}
-          radius="md"
-          onClick={handleDetailView}
+      {showAction && (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            marginTop: '1rem',
+          }}
         >
-          View User
-        </Button>
-      </div>
+          <Button
+            color="blue"
+            style={{ width: '20%' }}
+            radius="md"
+            onClick={handleDetailView}
+          >
+            View User
+          </Button>
+        </div>
+      )}
     </Card>
   );
 };
-export default CardComponent;
+export default UserCard;
