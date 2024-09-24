@@ -30,9 +30,7 @@
   width: 60%;
   cursor: pointer;
 }
-.search-box {
-  margin-top: 2rem;
-}
+
 .listed-contents {
   display: flex;
   flex-direction: column;
@@ -64,7 +62,7 @@
   align-items: center;
   overflow: hidden;
   max-width: 32rem;
-  width: 900px;
+  width: 380px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -75,9 +73,7 @@ input {
 }
 
 .detailCard {
-  margin: 4rem 8rem;
-  margin-left: 1rem;
-  flex-grow: 2.5;
+  margin: 2rem 8rem;
 }
 .mantine-16gafg2 {
   background-color: #fff !important;
@@ -91,14 +87,105 @@ input {
 .logout-button {
   width: 10%;
   padding: 10px 20px;
-  background-color: #007bff; /* Blue background */
-  border: 2px solid #0056b3; /* Darker blue border */
-  border-radius: 5px; /* Slightly rounded corners */
-  color: white; /* White text color */
-  cursor: pointer; /* Pointer cursor on hover */ /* Center the text */
-  transition: background-color 0.3s; /* Smooth background transition */
+  background-color: #007bff;
+  border: 2px solid #0056b3;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .logout-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.sort-controls {
+  // border: 2px solid #007bff;
+  // border-radius: 13px;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  border: 2px solid #bfdbfe;
+  background-color: #ebf8ff;
+  padding-right: 1rem;
+  padding-top: 0.2rem;
+  padding-left: 1.5rem;
+  overflow: hidden;
+  height: 50px;
+}
+.sort-controls option {
+  font-size: 1rem;
+}
+.sort-controls select {
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  color: #4b5563;
+}
+
+.sort-select {
+  cursor: pointer;
+  min-width: 180px;
+  height: 32px;
+  box-shadow: 0 0 5px 2px rgba(215, 213, 213, 0.5);
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.sort-btn {
+  border: 1px solid rgb(181, 179, 179);
+  border-radius: 0.3rem;
+  background-color: white;
+  margin: 0.5rem;
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  color: #4b5563;
+  cursor: pointer;
+  min-width: 60px;
+  outline: none;
+}
+.sort-btn:hover {
+  background-color: #228be6;
+  outline: none;
+  color: white;
+}
+
+.sort-select:focus {
+  box-shadow: 0 0 5px 2px rgba(215, 213, 213, 0.5);
+  border: none;
+  outline: none;
+}
+
+.sort-btn.active {
+  border: 2px solid rgb(49, 90, 226);
+}
+
+.logout-btn {
+  background-color: #f65154;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.logout-btn:hover {
+  color: black;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid #05080b;
+}
+
+.user-icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

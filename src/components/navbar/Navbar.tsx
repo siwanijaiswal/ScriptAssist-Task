@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import ArrowIcon from '../../assets/arrow.png';
+import { Link } from 'react-router-dom';
+import { Card, Button } from '@mantine/core';
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
@@ -36,11 +39,30 @@ const Navbar = () => {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'flex-end',
+            justifyContent: 'space-between',
             margin: '1rem',
           }}
         >
-          <Text weight={500} size={23} onClick={logout}>
+          <Link to="/users">
+            <Button
+              color="blue"
+              style={{
+                width: '180px',
+                marginLeft: '1rem',
+              }}
+              radius="xl"
+            >
+              <img
+                src={ArrowIcon}
+                width={30}
+                height={30}
+                alt="back_arrow"
+                style={{ marginRight: '10px' }}
+              />{' '}
+              Back
+            </Button>
+          </Link>
+          <Text weight={500} onClick={logout} className="logout-btn">
             Logout
           </Text>
         </div>

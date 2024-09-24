@@ -49,137 +49,164 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
           marginTop: '1.5rem',
         }}
       >
-        <div style={{ display: 'flex', gap: '85px' }}>
-          <Text mt="xs" c="dimmed" size="sm" style={{ display: 'flex' }}>
-            <Image
-              src={HeightIcon}
-              height={30}
-              width={30}
-              style={{ marginLeft: '5px', marginRight: '5px' }}
-              alt="Height icon"
-            />
-            <span
-              style={{ fontWeight: 'bold', color: 'black', marginRight: '7px' }}
+        <div className="user-icons">
+          <div>
+            <Text
+              mt="xs"
+              c="dimmed"
+              size="sm"
+              style={{ display: 'flex', minWidth: '223px' }}
             >
-              Height :{' '}
-            </span>{' '}
-            {height}
-          </Text>
+              <Image
+                src={HeightIcon}
+                height={30}
+                width={20}
+                style={{ marginLeft: '22px', marginRight: '5px' }}
+                alt="Height icon"
+              />
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  color: 'black',
+                  marginRight: '7px',
+                }}
+              >
+                Height :{' '}
+              </span>{' '}
+              {height}
+            </Text>
 
-          <Text
-            mt="xs"
-            ml="xl"
-            c="dimmed"
-            size="sm"
-            style={{ display: 'flex' }}
-          >
-            <Image
-              src={GenderIcon}
-              height={30}
-              width={30}
-              style={{ marginLeft: '5px', marginRight: '5px' }}
-              alt="Height icon"
-            />
-            <span
-              style={{ fontWeight: 'bold', color: 'black', marginRight: '7px' }}
+            <Text
+              mt="xs"
+              ml="xl"
+              c="dimmed"
+              size="sm"
+              style={{ display: 'flex', minWidth: '223px', marginTop: '20px' }}
             >
-              Gender :{' '}
-            </span>{' '}
-            {gender}
-          </Text>
-          <Text
-            mt="xs"
-            ml="xl"
-            c="dimmed"
-            size="sm"
-            style={{ display: 'flex' }}
-          >
-            <Image
-              src={MassIcon}
-              height={30}
-              width={30}
-              style={{ marginLeft: '5px', marginRight: '5px' }}
-              alt="Height icon"
-            />
-            <span
-              style={{ fontWeight: 'bold', color: 'black', marginRight: '7px' }}
+              <Image
+                src={GenderIcon}
+                height={30}
+                width={30}
+                style={{ marginRight: '5px' }}
+                alt="Height icon"
+              />
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  color: 'black',
+                  marginRight: '7px',
+                }}
+              >
+                Gender :{' '}
+              </span>{' '}
+              {gender}
+            </Text>
+          </div>
+          <div>
+            <Text
+              mt="xs"
+              ml="xl"
+              c="dimmed"
+              size="sm"
+              style={{ display: 'flex', minWidth: '223px' }}
             >
-              Mass :{' '}
-            </span>{' '}
-            {mass}
-          </Text>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            gap: '35px',
-            marginTop: '1.5rem',
-            marginBottom: '1rem',
-          }}
-        >
-          <Text
-            mt="xs"
-            ml="xl"
-            c="dimmed"
-            size="sm"
-            style={{ display: 'flex' }}
-          >
-            <Image
-              src={EyeIcon}
-              height={30}
-              width={30}
-              style={{ marginLeft: '5px', marginRight: '5px' }}
-              alt="Height icon"
-            />
-            <span
-              style={{ fontWeight: 'bold', color: 'black', marginRight: '7px' }}
+              <Image
+                src={MassIcon}
+                height={30}
+                width={30}
+                style={{ marginRight: '5px' }}
+                alt="Height icon"
+              />
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  color: 'black',
+                  marginRight: '7px',
+                }}
+              >
+                Mass :{' '}
+              </span>{' '}
+              {mass}
+            </Text>
+            <Text
+              mt="xs"
+              ml="xl"
+              c="dimmed"
+              size="sm"
+              style={{ display: 'flex', minWidth: '223px', marginTop: '20px' }}
             >
-              Eye Color :{' '}
-            </span>{' '}
-            {eye_color}
-          </Text>
-          <Text
-            mt="xs"
-            ml="xl"
-            c="dimmed"
-            size="sm"
-            style={{ display: 'flex' }}
-          >
-            <Image
-              src={HairIcon}
-              height={30}
-              width={30}
-              style={{ marginLeft: '5px', marginRight: '5px' }}
-              alt="Height icon"
-            />
-            <span
-              style={{ fontWeight: 'bold', color: 'black', marginRight: '7px' }}
+              <Image
+                src={EyeIcon}
+                height={30}
+                width={30}
+                style={{ marginRight: '5px' }}
+                alt="Height icon"
+              />
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  color: 'black',
+                  marginRight: '7px',
+                }}
+              >
+                Eye Color :{' '}
+              </span>{' '}
+              {eye_color}
+            </Text>
+          </div>
+
+          <div>
+            <Text
+              mt="xs"
+              ml="xl"
+              c="dimmed"
+              size="sm"
+              style={{ display: 'flex', minWidth: '223px' }}
             >
-              Hair Color :{' '}
-            </span>{' '}
-            {hair_color}
-          </Text>
-          <Text
-            mt="xs"
-            ml="xl"
-            c="dimmed"
-            size="sm"
-            style={{ display: 'flex' }}
-          >
-            <Image
-              src={SkinColorIcon}
-              height={30}
-              width={30}
-              style={{ marginLeft: '5px', marginRight: '5px' }}
-              alt="Height icon"
-            />
-            <span
-              style={{ fontWeight: 'bold', color: 'black', marginRight: '7px' }}
+              <Image
+                src={HairIcon}
+                height={30}
+                width={30}
+                style={{ marginRight: '5px' }}
+                alt="Height icon"
+              />
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  color: 'black',
+                  marginRight: '7px',
+                }}
+              >
+                Hair Color :{' '}
+              </span>{' '}
+              {hair_color}
+            </Text>
+            <Text
+              mt="xs"
+              ml="xl"
+              c="dimmed"
+              size="sm"
+              style={{ display: 'flex', minWidth: '223px', marginTop: '20px' }}
             >
-              Skin Color :{' '}
-            </span>{' '}
-            {skin_color}
-          </Text>
+              <Image
+                src={SkinColorIcon}
+                height={30}
+                width={30}
+                style={{ marginRight: '5px' }}
+                alt="Height icon"
+              />
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  color: 'black',
+                  marginRight: '7px',
+                }}
+              >
+                Skin Color :{' '}
+              </span>{' '}
+              {skin_color}
+            </Text>
+          </div>
         </div>
       </Center>
       {showAction && (
