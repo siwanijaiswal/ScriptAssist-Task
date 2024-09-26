@@ -16,7 +16,6 @@ const DetailPage: FC = () => {
     try {
       const response = await getPeople(id);
       setUserDetail(response.data);
-      // console.log(userDetail);
     } finally {
       setLoading(false);
     }
@@ -33,14 +32,7 @@ const DetailPage: FC = () => {
   }
 
   return (
-    <div
-      style={
-        {
-          // display: 'flex',
-          // justifyContent: 'center',
-        }
-      }
-    >
+    <div>
       <Card padding="xl" radius="lg" withBorder className="detailCard">
         {userDetail && <UserCard user={userDetail} showAction={false} />}
         <DetailAccordion userDetail={userDetail} />

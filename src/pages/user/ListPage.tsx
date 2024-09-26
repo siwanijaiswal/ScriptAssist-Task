@@ -10,10 +10,8 @@ const ListPage: FC = () => {
   const [filteredUsers, setFilteredUsers] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Sorting related state
   const [sortCriteria, setSortCriteria] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
-  const [activeSortButton, setActiveSortButton] = useState<string | null>(null);
 
   const fetchUsers = async (): Promise<void> => {
     setLoading(true);
@@ -33,24 +31,19 @@ const ListPage: FC = () => {
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      let newFilteredUsers = users.filter((user) => {
-        return user.name
-          .toLocaleLowerCase()
-          .includes(searchField.toLowerCase());
-      });
+      let newFilteredUsers = users.filter((user) =>
+        user.name.toLocaleLowerCase().includes(searchField.toLowerCase())
+      );
 
-      // Apply sorting
       newFilteredUsers = newFilteredUsers.sort((a, b) => {
         let valA = a[sortCriteria];
         let valB = b[sortCriteria];
 
-        // Parse strings to numbers for 'mass' and 'height'
         if (sortCriteria === 'mass' || sortCriteria === 'height') {
           valA = parseFloat(valA) || 0;
           valB = parseFloat(valB) || 0;
         }
 
-        // Check if the value is a number or string for sorting
         if (typeof valA === 'number' && typeof valB === 'number') {
           return sortOrder === 'asc' ? valA - valB : valB - valA;
         } else if (typeof valA === 'string' && typeof valB === 'string') {
@@ -76,17 +69,36 @@ const ListPage: FC = () => {
 
   const handleSortCriteriaChange = (event: any) => {
     setSortCriteria(event.target.value);
-    setActiveSortButton(null);
   };
 
   const sortAscOrder = () => {
     setSortOrder('asc');
-    setActiveSortButton('asc');
   };
 
   const sortDescOrder = () => {
     setSortOrder('desc');
-    setActiveSortButton('desc');
+  };
+
+  const renderSortButtons = () => {
+    const textAsc = sortCriteria === 'name' ? 'A - Z' : 'ASC';
+    const textDesc = sortCriteria === 'name' ? 'Z - A' : 'DESC';
+
+    return (
+      <div>
+        <button
+          onClick={sortAscOrder}
+          className={`sort-btn ${sortOrder === 'asc' ? 'active' : ''}`}
+        >
+          {textAsc}
+        </button>
+        <button
+          onClick={sortDescOrder}
+          className={`sort-btn ${sortOrder === 'desc' ? 'active' : ''}`}
+        >
+          {textDesc}
+        </button>
+      </div>
+    );
   };
 
   return (
@@ -109,43 +121,8 @@ const ListPage: FC = () => {
                 <option value="height">Height</option>
                 <option value="mass">Mass</option>
               </select>
-              <div>
-                {sortCriteria === 'name' && (
-                  <div>
-                    <button
-                      onClick={sortAscOrder}
-                      className={`sort-btn ${activeSortButton === 'asc' ? 'active' : ''}`}
-                    >
-                      {' '}
-                      A - Z
-                    </button>
-                    <button
-                      onClick={sortDescOrder}
-                      className={`sort-btn ${activeSortButton === 'desc' ? 'active' : ''}`}
-                    >
-                      {' '}
-                      Z - A
-                    </button>
-                  </div>
-                )}
 
-                {(sortCriteria === 'height' || sortCriteria === 'mass') && (
-                  <div>
-                    <button
-                      onClick={sortAscOrder}
-                      className={`sort-btn ${activeSortButton === 'asc' ? 'active' : ''}`}
-                    >
-                      ASC
-                    </button>
-                    <button
-                      onClick={sortDescOrder}
-                      className={`sort-btn ${activeSortButton === 'desc' ? 'active' : ''}`}
-                    >
-                      DESC
-                    </button>
-                  </div>
-                )}
-              </div>
+              {sortCriteria && renderSortButtons()}
             </div>
           </div>
 

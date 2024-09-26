@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import ArrowIcon from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
-import { Card, Button } from '@mantine/core';
+import { Button } from '@mantine/core';
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
@@ -22,7 +22,7 @@ const Navbar = () => {
     try {
       signOutUser()
         .then(() => {
-          toast.success('user logged out');
+          toast.success('Logged Out');
           navigate('/');
         })
         .catch((error: any) => {

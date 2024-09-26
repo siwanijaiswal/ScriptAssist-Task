@@ -21,7 +21,6 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export function SignUp(props: PaperProps) {
@@ -44,10 +43,8 @@ export function SignUp(props: PaperProps) {
     },
   });
 
-  const navigate = useNavigate();
-
   const onLoginSuccess = () => {
-    navigate('/users');
+    window.open('/users', '_self');
   };
 
   const signUpWithGoogle = () => {

@@ -1,12 +1,12 @@
 import { useRef } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../utils/firebase';
 import { Navigate } from 'react-router-dom';
 import { Loader } from '../components/common/Loader';
 import { toast } from 'react-toastify';
+import { useAppStore } from '../store/app.store';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const [user, loading] = useAuthState(auth);
+  const user = useAppStore((state: any) => state.user);
+  const loading = useAppStore((state: any) => state.loading);
   const toastDisplayed = useRef(false);
 
   if (loading) {
