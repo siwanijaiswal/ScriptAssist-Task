@@ -84,21 +84,6 @@ input {
   color: #212529 !important;
 }
 
-.logout-button {
-  width: 10%;
-  padding: 10px 20px;
-  background-color: #007bff;
-  border: 2px solid #0056b3;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.logout-button:hover {
-  background-color: #0056b3;
-}
-
 .list-header {
   display: flex;
   align-items: center;
@@ -107,8 +92,6 @@ input {
 }
 
 .sort-controls {
-  // border: 2px solid #007bff;
-  // border-radius: 13px;
   display: flex;
   justify-content: center;
 
@@ -139,6 +122,12 @@ input {
   box-shadow: 0 0 5px 2px rgba(215, 213, 213, 0.5);
   border-radius: 0.5rem;
   border: none;
+
+  &:focus {
+    box-shadow: 0 0 5px 2px rgba(215, 213, 213, 0.5);
+    border: none;
+    outline: none;
+  }
 }
 
 .sort-btn {
@@ -152,21 +141,16 @@ input {
   cursor: pointer;
   min-width: 60px;
   outline: none;
-}
-.sort-btn:hover {
-  background-color: #228be6;
-  outline: none;
-  color: white;
-}
 
-.sort-select:focus {
-  box-shadow: 0 0 5px 2px rgba(215, 213, 213, 0.5);
-  border: none;
-  outline: none;
-}
+  &:hover {
+    background-color: #228be6;
+    outline: none;
+    color: white;
+  }
 
-.sort-btn.active {
-  border: 2px solid rgb(49, 90, 226);
+  &.active {
+    border: 2px solid rgb(49, 90, 226);
+  }
 }
 
 .logout-btn {
@@ -176,16 +160,63 @@ input {
   cursor: pointer;
   font-size: 1.2rem;
   color: white;
-}
 
-.logout-btn:hover {
-  color: black;
-  background: white;
-  border-radius: 0.5rem;
-  border: 1px solid #05080b;
+  &:hover {
+    color: black;
+    background: white;
+    border-radius: 0.5rem;
+    border: 1px solid #05080b;
+  }
 }
 
 .user-icons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.user-icons .margin-top {
+  margin-top: 1.25rem;
+}
+.mantine-1mn0h6w {
+  width: auto !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .user-icons {
+    grid-template-columns: 1fr;
+  }
+
+  .user-icons .margin-top {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .list-header {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .list-header {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .detailCard {
+    margin: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card-component {
+    margin: 2rem auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sort-contents {
+    display: flex;
+  }
 }

@@ -103,7 +103,13 @@ export function SignUp(props: PaperProps) {
   };
 
   return (
-    <Paper radius="md" p="xl" withBorder {...props}>
+    <Paper
+      radius="md"
+      p="xl"
+      withBorder
+      {...props}
+      style={{ maxWidth: '450px', margin: '0 auto' }}
+    >
       <Center>
         <Text size="lg" fw={500}>
           Welcome Back,{' '}

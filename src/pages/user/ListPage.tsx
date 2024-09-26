@@ -3,6 +3,7 @@ import Users from '../../components/user/Users';
 import Search from '../../components/user/SearchUsers';
 import { getPeoples } from '../../service/user';
 import { Loader } from '../../components/common/Loader';
+import { toast } from 'react-toastify';
 
 const ListPage: FC = () => {
   const [searchField, setSearchField] = useState('');
@@ -19,7 +20,7 @@ const ListPage: FC = () => {
       const response: any = await getPeoples();
       setUsers(response?.data?.results);
     } catch (error) {
-      console.error(error);
+      toast.error('Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -84,7 +85,7 @@ const ListPage: FC = () => {
     const textDesc = sortCriteria === 'name' ? 'Z - A' : 'DESC';
 
     return (
-      <div>
+      <div className="sort-contents">
         <button
           onClick={sortAscOrder}
           className={`sort-btn ${sortOrder === 'asc' ? 'active' : ''}`}

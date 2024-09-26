@@ -46,17 +46,13 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
         style={{
           display: 'flex',
           flexDirection: 'column',
+          flexWrap: 'wrap',
           marginTop: '1.5rem',
         }}
       >
         <div className="user-icons">
           <div>
-            <Text
-              mt="xs"
-              c="dimmed"
-              size="sm"
-              style={{ display: 'flex', minWidth: '223px' }}
-            >
+            <Text mt="xs" c="dimmed" size="sm" style={{ display: 'flex' }}>
               <Image
                 src={HeightIcon}
                 height={30}
@@ -77,11 +73,12 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
             </Text>
 
             <Text
+              className="margin-top"
               mt="xs"
               ml="xl"
               c="dimmed"
               size="sm"
-              style={{ display: 'flex', minWidth: '223px', marginTop: '20px' }}
+              style={{ display: 'flex' }}
             >
               <Image
                 src={GenderIcon}
@@ -108,7 +105,7 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
               ml="xl"
               c="dimmed"
               size="sm"
-              style={{ display: 'flex', minWidth: '223px' }}
+              style={{ display: 'flex' }}
             >
               <Image
                 src={MassIcon}
@@ -133,7 +130,8 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
               ml="xl"
               c="dimmed"
               size="sm"
-              style={{ display: 'flex', minWidth: '223px', marginTop: '20px' }}
+              className="margin-top"
+              style={{ display: 'flex' }}
             >
               <Image
                 src={EyeIcon}
@@ -161,7 +159,7 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
               ml="xl"
               c="dimmed"
               size="sm"
-              style={{ display: 'flex', minWidth: '223px' }}
+              style={{ display: 'flex' }}
             >
               <Image
                 src={HairIcon}
@@ -186,7 +184,8 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
               ml="xl"
               c="dimmed"
               size="sm"
-              style={{ display: 'flex', minWidth: '223px', marginTop: '20px' }}
+              className="margin-top"
+              style={{ display: 'flex' }}
             >
               <Image
                 src={SkinColorIcon}
