@@ -6,6 +6,9 @@
 ### 
 A React application created for a technical exercise, showcasing features like Firebase authentication with persistent auth state, API integration, resource listing, and detailed displays. It utilizes Mantine UI, React Query, and Zustand for state management.
 
+### Deployed Live Link
+https://script-assist-task-bysiwani.netlify.app/
+
 ## Build Command
 ```
 npm run build
