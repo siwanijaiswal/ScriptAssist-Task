@@ -14,6 +14,7 @@ const UserCard: FC<{ user: Record<string, any>; showAction?: boolean }> = ({
 }) => {
   const { name, height, gender, mass, eye_color, hair_color, skin_color, url } =
     user;
+
   const navigate = useNavigate();
 
   const urlArray = url?.split('/');

@@ -1,11 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, Button } from '@mantine/core';
+import { Card } from '@mantine/core';
 import DetailAccordion from '../../components/user/DetailAccordion';
 import UserCard from '../../components/user/User';
 import { getPeople } from '../../service/user';
 import { Loader } from '../../components/common/Loader';
-import ArrowIcon from '../../assets/arrow.png';
 
 const DetailPage: FC = () => {
   const { id } = useParams<{ id: string }>();

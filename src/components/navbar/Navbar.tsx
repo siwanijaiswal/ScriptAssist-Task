@@ -2,14 +2,15 @@ import { signOutUser, auth } from '../../utils/firebase';
 import { Text } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import ArrowIcon from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
 import { Button } from '@mantine/core';
+import { useAppStore } from '../../store/app.store';
 
 const Navbar = () => {
-  const [user, loading] = useAuthState(auth);
+  const user = useAppStore((state: any) => state.user);
+  const loading = useAppStore((state: any) => state.loading);
   const navigate = useNavigate();
 
   useEffect(() => {
