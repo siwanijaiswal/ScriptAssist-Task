@@ -1,7 +1,10 @@
-### 
-A React application created for a technical exercise, showcasing features like Firebase authentication with persistent auth state, API integration, resource listing, and detailed displays. It utilizes Mantine UI, React Query, and Zustand for state management.
 
 # Script Assist - React Developer Technical Exercise 
+
+## Description
+
+### 
+A React application created for a technical exercise, showcasing features like Firebase authentication with persistent auth state, API integration, resource listing, and detailed displays. It utilizes Mantine UI, React Query, and Zustand for state management.
 
 ## Build Command
 ```
