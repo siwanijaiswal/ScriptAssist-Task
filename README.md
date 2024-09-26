@@ -26,5 +26,5 @@ React Router
 Typescript
 Mantine UI Library
 SCSS
-Zustard
+Zustand
 SWAPI - The Star Wars API 
